@@ -83,7 +83,24 @@ li:hover ul#submenu {
 
 </style>
 <script>
-const form =document.getElementById('');
+const form = document.getElementById('form');
+const YDimension = document.getElementById('YdimensionID');
+const ZDimension = document.getElementById('ZdimensionID');
+const XDimension = document.getElementById('XdimensionID');
+
+form.addEventListener('Submit',function(e)
+		      {
+			      e.preventDefault();
+			const YdimensionValue =   YDimension.value;
+			const ZdimensionValue =   ZDimension.value;
+			const XdimensionValue =   XDimension.value;
+
+			localStorage.setItem('YdimensionIS',YdimensionValue);
+			localStorage.setItem('ZdimensionIS',ZdimensionValue);
+			localStorage.setItem('XdimensionIS',XdimensionValue);
+
+			window.location.href = "QuotationResults.html";
+		      })
 </script>
 </head>
 <body>
@@ -94,7 +111,7 @@ const form =document.getElementById('');
     <li><a style="font-size:2vw" href="Main.html">Home</a></li>
     <li><a style="font-size:2vw" href="PastProjects.html">About Me</a></li>
     <li><a style="font-size:2vw" href="https://docs.google.com/forms/d/e/1FAIpQLSfyNSatpshOEoCTmX16cZmfTqI3ruMK9FcJexK-f5weIxJ7eg/viewform?embedded=true target=_blank">Contact Us</a></li>
-	<li><a style="font-size:2vw" href="Quotation.html">Quotation</a></li>
+    <li><a style="font-size:2vw" href="Quotation.html">Quotation</a></li>
   </ul>
 </nav>
 <!--Code end Here nav1-->
@@ -137,20 +154,28 @@ const form =document.getElementById('');
 <div class="column" style="background-color:#ADD8E6;">
 <div class="row">
         <br>
-        <form id = "form">
-	<label for ="YDimension">Y Dimensions:<Label><br>
+        <form id = "form"><!--start of data sent to next form-->
+	<label for ="YDimension">Y Dimensions:</label><br>
 	<input id = "YdimensionID" type ="text">
+
+	<label for ="ZDimension">Z Dimensions:</label><br>
+	<input id = "ZdimensionID" type ="text">
+
+	<label for ="XDimension">X Dimensions:</label><br>
+	<input id = "XdimensionID" type ="text">
+	</form><!--end of data sent to next form-->
+		<!--First need to get the dimensions for sqm computations-->
         
       </div>
       <div class="column" style="background-color:#ADD8E6;">
         <br>
         
-        <label for ="ZDimension">Z Dimensions:<Label><br>
-	<input id = "ZdimensionID" type ="text">
+        <label for ="ZDimension">Z Dimensions:</label><br>
+	<input id = "ZadimensionID" type ="text">
         
       </div>
 
-<div> /* END OF COLLUMS FOR COLLECTION */
+<div> <!--END OF COLLUMS FOR COLLECTION -->
 <button type ="submit">Process Selection</button>
 </div>
 <p style="font-size:1vw">All Right Reserved 2023</p>
