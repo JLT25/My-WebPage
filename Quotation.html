@@ -26,9 +26,6 @@
 .column {
   flex: 10%;
   padding: 10px;
-  column-count: 3;
-  column-gap: 40px;
-  column-rule: 4px double #ff00ff;
   height: 300px; /* Should be removed. Only for demonstration */
 }
 .dropdownmenu a {
@@ -74,7 +71,7 @@ li:hover ul#submenu {
 
 </style>
 <script>
-
+const form =document.getElementById('');
 </script>
 </head>
 <body>
@@ -124,9 +121,25 @@ li:hover ul#submenu {
       </div>
     
   </div>
+
+<div class="column" style="background-color:#ADD8E6;">
+        <br>
+        <form id = "form">
+	<label for ="YDimension">Y Dimensions:<Label><br>
+	<input id = "YdimensionID" type ="text">
+        
+      </div>
+      <div class="column" style="background-color:#ADD8E6;">
+        <br>
+        
+        <label for ="ZDimension">Z Dimensions:<Label><br>
+	<input id = "ZdimensionID" type ="text">
+        
+      </div>
+<button type ="submit">Process Selection</button>
 </center>
 
-<h1 style="font-size:5vw">From KingsPoint</h1>
+
 
 
 
