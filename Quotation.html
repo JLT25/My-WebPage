@@ -91,9 +91,9 @@ const XDimensionID = document.getElementById('XdimensionID');
 form.addEventListener('submit',function(e)
 		      {
 			      e.preventDefault();
-			const YdimensionValue =   YDimension.value;
-			const ZdimensionValue =   ZDimension.value;
-			const XdimensionValue =   XDimension.value;
+			const YdimensionValue =   YDimensionID.value;
+			const ZdimensionValue =   ZDimensionID.value;
+			const XdimensionValue =   XDimensionID.value;
 
 			localStorage.setItem('YdimensionIS',YdimensionValue);
 			localStorage.setItem('ZdimensionIS',ZdimensionValue);
