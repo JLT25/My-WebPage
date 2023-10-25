@@ -84,6 +84,9 @@ li:hover ul#submenu {
 </style>
 
 </head>
+<script>
+
+</script>
 <body>
 
 <!--Code start here Nav1-->
@@ -135,16 +138,24 @@ li:hover ul#submenu {
 <div class="column" style="background-color:#ADD8E6;">
 <div class="row">
         <br>
-        <form id = "form"><!--start of data sent to next form-->
-	<label for ="YDimension">Y Dimensions:</label><br>
-	<input id = "YdimensionID" type ="text">
-
-	<label for ="ZDimension">Z Dimensions:</label><br>
-	<input id = "ZdimensionID" type ="text">
-
-	<label for ="XDimension">X Dimensions:</label><br>
-	<input id = "XdimensionID" type ="text">
-	</form><!--end of data sent to next form-->
+	<form method ="GET" action ="QoutationResults.html">
+	<table>
+		<tr>
+			<td>X Dimension</td>
+			<td><input type ="text" name = "Xdimension"></td>
+		</tr>
+		<tr>
+			<td>Y Dimension</td>
+			<td><input type ="text" name = "Ydimension"></td>
+		</tr>
+		<tr>
+			<td>Z Dimension</td>
+			<td><input type ="text" name = "Zdimension"></td>
+		</tr>
+		<td></td>
+	</table>
+	</form>
+        <!--end of data sent to next form-->
 		<!--First need to get the dimensions for sqm computations-->
         
       </div>
@@ -180,24 +191,5 @@ li:hover ul#submenu {
 
 
 
-<script>
-const form = document.getElementById('form');
-const YDimensionID = document.getElementById('YdimensionID');
-const ZDimensionID = document.getElementById('ZdimensionID');
-const XDimensionID = document.getElementById('XdimensionID');
 
-form.addEventListener('submit',function(e)
-		      {
-			      e.preventDefault();
-			const YdimensionValue =   YDimensionID.value;
-			const ZdimensionValue =   ZDimensionID.value;
-			const XdimensionValue =   XDimensionID.value;
-
-			localStorage.setItem('YdimensionIS',YdimensionValue);
-			localStorage.setItem('ZdimensionIS',ZdimensionValue);
-			localStorage.setItem('XdimensionIS',XdimensionValue);
-
-			window.location.href = "QoutationResults.html";
-		      })
-</script>
 </html>
