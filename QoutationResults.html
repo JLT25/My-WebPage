@@ -72,7 +72,10 @@ li:hover ul#submenu {
 </style>
 <script>
 var data = window.location.search;
-	console.log(data);
+var param = new URLSearchParams(data);
+console.log(data);
+var name = params.get("name");
+document.getElementById("res").innerHTML = data;
 </script>
 </head>
 <body>
@@ -96,10 +99,9 @@ var data = window.location.search;
 </nav>
 <!--Code end Here nav2-->
 
-<form>
 
 <center>
-
+<p id = "res">
 
 <h1 style="font-size:3vw"><br><br>Cost of Construction</h1>
 </center>
