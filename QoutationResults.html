@@ -76,9 +76,9 @@ var params = new URLSearchParams(data);
 console.log(data);
 console.log(params);
 console.log(params.get(Xdimension));
-var Xdimension = params.get("Xdimension");
-var Ydimension = params.get("Ydimension");
-var Zdimension = params.get("Zdimension");
+var Xdimension = params.get.toString("Xdimension");
+var Ydimension = params.get.toString("Ydimension");
+var Zdimension = params.get.toString("Zdimension");
 
 var getData = "Y Dimension is "+Ydimension+"X Dimension is"+Xdimension+"Z dimension is "+Zdimension;
 document.getElementById("res").innerHTML = data;
