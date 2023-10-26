@@ -103,14 +103,27 @@ li:hover ul#submenu {
     x.style.display = "none";
   }
 
+  
+
 
   	var XadimensionID = idx;
 	var YadimensionID = idy;
 	var ZadimensionID = idz;
+
+	var cubicmeter =  XadimensionID + YadimensionID +ZadimensionID;
+
+	var costrow1 = cubicmeter * 22000;
+
+	var resultrow1 = costrow1
+
+	document.getElementById("CostRow1").innerHTML = resultrow1;
+
+
 	sessionStorage.setItem("XadimensionsIS",XadimensionID);
 	sessionStorage.setItem("YadimensionsIS",YadimensionID);
 	console.log(XadimensionID);
 	console.log(YadimensionID);
+	sessionStorage.clear();
 }
 
 </script>
@@ -205,7 +218,34 @@ li:hover ul#submenu {
 
 
 
-
+<!--Start of Data Display-->
+<h1 style="font-size:3vw"><br><br>Average Cost of Construction</h1>
+<div class="row">
+    <div class="column" style="background-color:#aaa;">
+      <br>
+      
+    </div>
+    <div class="column" style="background-color:#FFFFFF;">
+        <br>
+        <table> <!--Table the collums so that it looks nice-->
+			<tr>
+				<td>Cost for total Cubic meter</td>
+				<td><p id = "CostRow1"></p></td>
+			</tr>
+			<tr>
+				<td>Labor Cost</td>
+				<td><p id = "CostRow2"></td>
+			</tr>
+			<tr>
+				<td>Expected Time</td>
+				<td><p id = "CostRow3"></td>
+			</tr>
+			<td></td>
+		</table>
+      </div>
+      
+    
+  </div>
 
 
 
