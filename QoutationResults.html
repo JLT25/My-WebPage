@@ -74,8 +74,12 @@ li:hover ul#submenu {
 var data = window.location.search;
 var param = new URLSearchParams(data);
 console.log(data);
-var name = params.get("name");
-document.getElementById("res").innerHTML = data;
+var XdimensionsIS = params.get("Xdimension");
+var YdimensionsIS = params.get("Ydimension");
+var ZdimensionsIS = params.get("Zdimension");
+
+var getData = "Y Dimension is "+Ydimension+<br>+"X Dimension is"+Xdimension+<br>+"Z dimension is "+Zdimension
+document.getElementById("res").innerHTML = getData;
 </script>
 </head>
 <body>
