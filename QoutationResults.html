@@ -82,6 +82,16 @@ var Zdimension = params.get("Zdimension").toString;
 
 var getData = "Y Dimension is "+Ydimension+"X Dimension is"+Xdimension+"Z dimension is "+Zdimension;
 document.getElementById("res").innerHTML = data;
+
+
+function getda(){
+	var XdimensionsISpass = sessionStorage.getItem("XdimensionsIS");
+	console.log(XdimensionsISpass);
+	document.getElementById("XdimensionsISpass").innerHTML = data;
+}
+
+
+
 </script>
 </head>
 <body>
@@ -112,7 +122,7 @@ document.getElementById("res").innerHTML = data;
 <h1 style="font-size:3vw"><br><br>Cost of Construction</h1>
 </center>
 
-
+<button type = "button" onclick="getda()">Get Selection</button>
 
 
 

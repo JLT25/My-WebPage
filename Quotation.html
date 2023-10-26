@@ -85,6 +85,14 @@ li:hover ul#submenu {
 
 </head>
 <script>
+	function passda(){
+		 var idx = "XadimensionID";
+		 var idy = "YadimensionID";
+		 var idz = "ZadimensionID";
+
+		 sessionStorage.setItem("XdimensionsIS",XadimensionID)
+		 location.href = "QoutationResults.html";
+	}
 
 </script>
 <body>
@@ -142,15 +150,15 @@ li:hover ul#submenu {
 	<table>
 		<tr>
 			<td>X Dimension</td>
-			<td><input type ="text" name = "Xdimension" required></td>
+			<td><input type ="text" name = "Xdimension" id = "XadimensionID" required></td>
 		</tr>
 		<tr>
 			<td>Y Dimension</td>
-			<td><input type ="text" name = "Ydimension" required></td>
+			<td><input type ="text" name = "Ydimension" id = "YadimensionID" required></td>
 		</tr>
 		<tr>
 			<td>Z Dimension</td>
-			<td><input type ="text" name = "Zdimension" required></td>
+			<td><input type ="text" name = "Zdimension" id = "ZadimensionID" required></td>
 		</tr>
 		<td></td>
 	</table>
@@ -163,12 +171,12 @@ li:hover ul#submenu {
         <br>
         
         <label for ="ZDimension">Z Dimensions:</label><br>
-	<input id = "ZadimensionID" type ="text">
+	<input id = "ZadimensionID2" type ="text">
         
       </div>
 	
 </div> <!--END OF COLLUMS FOR COLLECTION -->
-<button type ="submit" >Process Selection</button>
+<button type = "button" onclick="passda()">Process Selection</button>
 </div>
 <p style="font-size:1vw">All Right Reserved 2023</p>
 </center>
