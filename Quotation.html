@@ -86,11 +86,12 @@ li:hover ul#submenu {
 </head>
 <script>
 	function passda(idx,idy,idz){
-		 var idx = "XadimensionID";
-		 var idy = "YadimensionID";
-		 var idz = "ZadimensionID";
+		 var XadimensionID = idx;
+		 var YadimensionID = idy;
+		 var ZadimensionID = idz;
 
-		 sessionStorage.setItem("XdimensionsIS",XadimensionID)
+		 sessionStorage.setItem("XadimensionsIS",XadimensionID);
+		 sessionStorage.setItem("YadimensionsIS",YadimensionID);
 		 location.href = "QoutationResults.html";
 	}
 
@@ -176,7 +177,7 @@ li:hover ul#submenu {
       </div>
 	
 </div> <!--END OF COLLUMS FOR COLLECTION -->
-<button type = "button" onclick="passda(XadimensionID,YadimensionID,ZadimensionID)">Process Selection</button>
+<button type = "button" onclick="passda(document.getElementById('XadimensionID').value,document.getElementById('YadimensionID').value,document.getElementById('ZadimensionID').value)">Process Selection</button>
 </div>
 <p style="font-size:1vw">All Right Reserved 2023</p>
 </center>

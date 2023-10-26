@@ -85,9 +85,11 @@ document.getElementById("res").innerHTML = data;
 
 
 function getda(){
-	var XdimensionsISpass = sessionStorage.getItem("XdimensionsIS");
+	var XdimensionsISpass = sessionStorage.getItem("XadimensionsIS");
+	var YdimensionsISpass = sessionStorage.getItem("YadimensionsIS");
 	console.log(XdimensionsISpass);
-	document.getElementById("XdimensionsISpass").innerHTML = data;
+	console.log(YdimensionsISpass);
+	document.getElementById("res").innerHTML = XdimensionsISpass;
 	sessionStorage.clear();
 }
 
