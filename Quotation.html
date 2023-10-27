@@ -36,6 +36,11 @@
   padding: 10px;
   height: 500px; /* Should be removed. Only for demonstration */
 }
+.column3 {
+  flex: 10%;
+  padding: 10px;
+  height: 500px; /* Should be removed. Only for demonstration */
+}
 
 .button {
   background-color: #ADD8E6; 
@@ -310,13 +315,14 @@ function HideBeforeSee(){
   </div>
 </div><!--End of Data Display-->
 
-
+<div class="column3" style="background-color:#cc6f18;">
 <div id="breakdowning"><!--start of Data breakdown hide-->
 <!--start of Breakdown-->
 <br><br>
+<h2>BreakDown of Cost</h2>
 <table> <!--Table the collums so that it looks nice-->
 	<tr>
-		<td><h2>BreakDown of Cost</h2></td><br>
+		<td></td>
 	</tr>
 	<tr>
 		<p>X Dimension Which is: </p><p id = "X-Dimension"></p><p> Multiplied by Y-Dimension: </p><p id = "Y-Dimension"></p><p> and Multiplied by Z-Dimension: </p><p id = "Z-Dimension"></p><br>
@@ -342,6 +348,7 @@ function HideBeforeSee(){
 <!--end of Breakdown-->
 
 </div><!--end of Data breakdown hide-->
+</div><!--end of Collum3-->
 
 
 
