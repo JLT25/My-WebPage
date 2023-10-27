@@ -148,6 +148,14 @@ function HideBeforeSee(){
     x.style.display = "none";
   }
 
+
+  var x = document.getElementById("breakdowning");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
 }
 
 </script>
@@ -298,41 +306,42 @@ function HideBeforeSee(){
 		</table>
       </div><!--end of second row which is east-->
       
-    <!--start of Breakdown-->
-	<br><br>
-	<table> <!--Table the collums so that it looks nice-->
-		<tr>
-			<td><h2>BreakDown of Cost</h2></td><br>
-		</tr>
-		<tr>
-			<p>X Dimension Which is: </p><p id = "X-Dimension"></p><p> Multiplied by Y-Dimension: </p><p id = "Y-Dimension"></p><p> and Multiplied by Z-Dimension: </p><p id = "Z-Dimension"></p><br>
-		</tr><!--End For Total Cost of Construction-->
-		<tr>
-			<p>We Get the Cubic Meter: </p><p id = "Cubic-Meter"></p><p> Which is then Multiplied again from the type of finishing selected by the radio button: </p><!--Put Radio Button Value here-->
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr><!--End For Total Cost of Laborer-->
-		<tr>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr><!--End For Total Cost of Items-->
-		<td></td>
-	</table>
-	<!--end of Breakdown-->
+    
   </div>
 </div><!--End of Data Display-->
 
 
+<div id="breakdowning"><!--start of Data breakdown hide-->
+<!--start of Breakdown-->
+<br><br>
+<table> <!--Table the collums so that it looks nice-->
+	<tr>
+		<td><h2>BreakDown of Cost</h2></td><br>
+	</tr>
+	<tr>
+		<p>X Dimension Which is: </p><p id = "X-Dimension"></p><p> Multiplied by Y-Dimension: </p><p id = "Y-Dimension"></p><p> and Multiplied by Z-Dimension: </p><p id = "Z-Dimension"></p><br>
+	</tr><!--End For Total Cost of Construction-->
+	<tr>
+		<p>We Get the Cubic Meter: </p><p id = "Cubic-Meter"></p><p> Which is then Multiplied again from the type of finishing selected by the radio button: </p><!--Put Radio Button Value here-->
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr><!--End For Total Cost of Laborer-->
+	<tr>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr><!--End For Total Cost of Items-->
+	<td></td>
+</table>
+<!--end of Breakdown-->
 
-
-
+</div><!--end of Data breakdown hide-->
 
 
 
