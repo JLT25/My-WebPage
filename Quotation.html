@@ -213,6 +213,59 @@ function HideBeforeSee(){
     
   </div>
 
+  <!--Real-Time-Quotation-Start-->
+  <div>
+	<label for="length">Length (m):</label>
+	<input type="number" id="length" step="0.01">
+</div>
+
+<div>
+	<label for="width">Width (m):</label>
+	<input type="number" id="width" step="0.01">
+</div>
+
+<div>
+	<label for="pricePerSqm">Price per sqm (PHP):</label>
+	<input type="number" id="pricePerSqm" step="0.01">
+</div>
+
+<div>
+	<p>Total sqm: <span id="totalSqm">0.00</span></p>
+	<p>Quotation: <span>&#8369;</span><span id="quotation">0.00</span></p>
+</div>
+
+<script>
+	const lengthInput = document.getElementById("length");
+	const widthInput = document.getElementById("width");
+	const pricePerSqmInput = document.getElementById("pricePerSqm");
+	const totalSqmSpan = document.getElementById("totalSqm");
+	const quotationSpan = document.getElementById("quotation");
+
+	// Function to calculate the total sqm and quotation in real-time
+	function calculateQuotation() {
+		const length = parseFloat(lengthInput.value);
+		const width = parseFloat(widthInput.value);
+		const pricePerSqm = parseFloat(pricePerSqmInput.value);
+
+		if (!isNaN(length) && !isNaN(width) && !isNaN(pricePerSqm)) {
+			const sqm = length * width;
+			const quotation = sqm * pricePerSqm;
+
+			totalSqmSpan.textContent = sqm.toFixed(2);
+			quotationSpan.textContent = quotation.toFixed(2);
+		}
+	}
+
+	// Add event listeners to the input fields for real-time calculation
+	lengthInput.addEventListener("input", calculateQuotation);
+	widthInput.addEventListener("input", calculateQuotation);
+	pricePerSqmInput.addEventListener("input", calculateQuotation);
+
+	// Initial calculation
+	calculateQuotation();
+</script>
+<!--Real-Time-Quotation-End-->
+
 <div class="column" style="background-color:#ADD8E6;">
 <div class="row">
         <br>
@@ -234,6 +287,8 @@ function HideBeforeSee(){
 	</table>
 	</form>
         <!--end of data sent to next form-->
+		
+
 		<!--First need to get the dimensions for sqm computations-->
         
       </div>
