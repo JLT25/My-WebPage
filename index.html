@@ -1,150 +1,17 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-<center> <img src="CompanyName.jpg" width="100%" height="40%" div class="logo"> </center></img>
-<style><!--code start here-->
-@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
-
-/* Override UGG site */
-#main {width: 100%; padding:0;}
-.content-asset p {margin:0 auto;}
-.breadcrumb {display:none;}
-
-/* Helpers */
-/**************************/
-.margin-top-10 {padding-top:10px;}
-.margin-bot-10 {padding-bottom:10px;}
-
-/* Typography */
-/**************************/
-#parallax-world-of-ugg h1 {font-family:'Oswald', sans-serif; font-size:24px; font-weight:400; text-transform: uppercase; color:black; padding:0; margin:0;}
-#parallax-world-of-ugg h2 {font-family:'Oswald', sans-serif; font-size:70px; letter-spacing:10px; text-align:center; color:white; font-weight:400; text-transform:uppercase; z-index:10; opacity:.9;}
-#parallax-world-of-ugg h3 {font-family:'Oswald', sans-serif; font-size:14px; line-height:0; font-weight:400; letter-spacing:8px; text-transform: uppercase; color:black;}
-#parallax-world-of-ugg p {font-family:'Source Sans Pro', sans-serif; font-weight:400; font-size:14px; line-height:24px;}
-.first-character {font-weight:400; float: left; font-size: 84px; line-height: 64px; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Source Sans Pro', sans-serif;}
-
-.sc {color: #3b8595;}
-.ny {color: #3d3c3a;}
-.atw {color: #c48660;}
-
-/* Section - Title */
-/**************************/
-#parallax-world-of-ugg .title {background: white; padding: 60px; margin:0 auto; text-align:center;}
-#parallax-world-of-ugg .title h1 {font-size:35px; letter-spacing:8px;}
-
-/* Section - Block */
-/**************************/
-#parallax-world-of-ugg .block {background: white; padding: 60px; width:820px; margin:0 auto; text-align:justify;}
-#parallax-world-of-ugg .block-gray {background: #f2f2f2;padding: 60px;}
-#parallax-world-of-ugg .section-overlay-mask {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: black; opacity: 0.70;}
-
-/* Section - Parallax */
-/**************************/
-#parallax-world-of-ugg .parallax-one {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://w.wallhaven.cc/full/kw/wallhaven-kwdd9d.png); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: top center;}
-#parallax-world-of-ugg .parallax-two {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://images.unsplash.com/photo-1432163230927-a32e4fd5a326?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: center center;}
-#parallax-world-of-ugg .parallax-three {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://w.wallhaven.cc/full/k9/wallhaven-k97erd.jpg); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: center center;}
-
-/* Extras */
-/**************************/
-#parallax-world-of-ugg .line-break {border-bottom:1px solid black; width: 150px; margin:0 auto;}
-
-/* Media Queries */
-/**************************/
-@media screen and (max-width: 959px) and (min-width: 768px) {
-  #parallax-world-of-ugg .block {padding: 40px; width:620px;}
-}
-@media screen and (max-width: 767px) {
-  #parallax-world-of-ugg .block {padding: 30px; width:420px;}
-  #parallax-world-of-ugg h2 {font-size:30px;}
-  #parallax-world-of-ugg .block {padding: 30px;}
-  #parallax-world-of-ugg .parallax-one, #parallax-world-of-ugg .parallax-two, #parallax-world-of-ugg .parallax-three {padding-top:100px; padding-bottom:100px;}
-}
-@media screen and (max-width: 479px) {
-  #parallax-world-of-ugg .block {padding: 30px 15px; width:290px;}
-}
-<!--Code start here nav-->
-.dropdownmenu ul, .dropdownmenu li {
-	margin: 0;
-	padding: 0;
-}
-.dropdownmenu ul {
-	background: gray;
-	list-style: none;
-	width: 100%;
-}
-.dropdownmenu li {
-	float: left;
-	position: relative;
-	width:auto;
-}
-.dropdownmenu a {
-	background: #30A6E6;
-	color: #FFFFFF;
-	display: block;
-	font: bold 12px/20px sans-serif;
-	padding: 10px 25px;
-	text-align: center;
-	text-decoration: none;
-	-webkit-transition: all .25s ease;
-	-moz-transition: all .25s ease;
-	-ms-transition: all .25s ease;
-	-o-transition: all .25s ease;
-	transition: all .25s ease;
-}
-.dropdownmenu li:hover a {
-	background: #000000;
-}
-#submenu {
-	left: 0;
-	opacity: 0;
-	position: absolute;
-	top: 35px;
-	visibility: hidden;
-	z-index: 1;
-}
-li:hover ul#submenu {
-	opacity: 1;
-	top: 40px;	/* adjust this as per top nav padding top & bottom comes */
-	visibility: visible;
-}
-#submenu li {
-	float: none;
-	width: 100%;
-}
-#submenu a:hover {
-	background: #DF4B05;
-}
-#submenu a {
-	background-color:#000000;
-}
-
-<!--code end here nav-->
-</style><!--code end here-->
-<title>Architect LandingPage</title>
-<script><!--code start here here-->
-
-</script><!--code end here-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architect Landing Page</title>  
+  
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
 </head>
 <body>
 
-<!--Code start here Nav1-->
-<nav class="dropdownmenu">
-  <ul>
-    <li><a style="font-size:2vw" href="index.html">Home</a></li>
-    <li><a style="font-size:2vw" href="PastProjects.html">About Me</a></li>
-    <li><a style="font-size:2vw" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfyNSatpshOEoCTmX16cZmfTqI3ruMK9FcJexK-f5weIxJ7eg/viewform?embedded=true target=_blank">Contact Us</a></li>
-    <li><a style="font-size:2vw" href="Quotation.html">Quotation</a></li>
-  </ul>
-</nav>
-<!--Code end Here nav1-->
-
-<!--Code start here Nav2-->
-<nav class="dropdownmenu">
-  <ul>
-    <li><a style="font-size:2vw" target="_blank" href="https://www.facebook.com/profile.php?id=61551045083008">Facebook</a></li>
-  </ul>
-</nav>
-<!--Code end Here nav2-->
+  
 
 
 <!--code here-->
@@ -203,6 +70,15 @@ li:hover ul#submenu {
 </div>
 
 <!--code end here-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  $(function(){
+    $.get("navbar.html", function(data) {
+      $("body").prepend(data); // Append content.html data into the #container div
+    });
+  });
+</script>
+</body>
 
-</body></div>
 </html>

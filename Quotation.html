@@ -1,104 +1,125 @@
 <!DOCTYPE html>
-<head>
-<img src="CompanyName.jpg" width="100%" height="40%" div class="logo"></img>  
-<title>Quotation Estimations</title>
-<style>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Quotation Estimations</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet">
 
-.dropdownmenu ul, .dropdownmenu li {
-	margin: 0;
-	padding: 0;
-}
-.dropdownmenu ul {
-	background: gray;
-	list-style: none;
-	width: 100%;
-}
-.dropdownmenu li {
-	float: left;
-	position: relative;
-	width:auto;
-}
-.row {
-  display: flex;
-}
+		<style>
+				.card-img-top {
+					width: 100%;
+					height: 25vh;
+					object-fit: cover;
+				}
+			</style>
+	</head>
 
-/* Create two equal columns that sits next to each other */
-.column {
-  flex: 10%;
-  padding: 10px;
-  height: 500px; /* Should be removed. Only for demonstration */
-}
+	<body>
 
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col p-2">
+					<h1 style="font-size:3vw">Average Cost of Construction</h1>
+				</div>
+			</div>
 
-/* Create two equal columns that sits next to each other */
-.column2 {
-  flex: 10%;
-  padding: 10px;
-  height: 500px; /* Should be removed. Only for demonstration */
-}
-.column3 {
-  flex: 10%;
-  padding: 10px;
-  height: 500px; /* Should be removed. Only for demonstration */
-}
+			<div class="row">
+				<div class="col-md-4 p-2">
+					<div class="card">
+						<img src="UnfinishedHousing.jpg" class="card-img-top"
+							alt="Unfinished Housing">
+						<div class="card-body">
+							<p class="card-text">Bare Housing</p>
+							<p class="card-text">22,000 php/sqm</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 p-2">
+					<div class="card">
+						<img src="standardhousing.jpg" class="card-img-top" alt="Standard Housing">
+						<div class="card-body">
+							<p class="card-text">Standard Housing</p>
+							<p class="card-text">35,000 php/sqm</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 p-2">
+					<div class="card">
+						<img src="Highendhouse.jpg" class="card-img-top" alt="High-End Housing">
+						<div class="card-body">
+							<p class="card-text">High-End Housing</p>
+							<p class="card-text">45,000 php/sqm</p>
+						</div>
+					</div>
+				</div>
+			</div>
 
-.button {
-  background-color: #ADD8E6; 
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  padding: 32px 16px;
-}
-.dropdownmenu a {
-	background: #30A6E6;
-	color: #FFFFFF;
-	display: block;
-	font: bold 12px/20px sans-serif;
-	padding: 10px 25px;
-	text-align: center;
-	text-decoration: none;
-	-webkit-transition: all .25s ease;
-	-moz-transition: all .25s ease;
-	-ms-transition: all .25s ease;
-	-o-transition: all .25s ease;
-	transition: all .25s ease;
-}
-.dropdownmenu li:hover a {
-	background: #000000;
-}
-#submenu {
-	left: 0;
-	opacity: 0;
-	position: absolute;
-	top: 35px;
-	visibility: hidden;
-	z-index: 1;
-}
-li:hover ul#submenu {
-	opacity: 1;
-	top: 40px;	/* adjust this as per top nav padding top & bottom comes */
-	visibility: visible;
-}
-#submenu li {
-	float: none;
-	width: 100%;
-}
-#submenu a:hover {
-	background: #DF4B05;
-}
-#submenu a {
-	background-color:#000000;
-}
+			<div class="row">
+				<div class="col-md-4 col-8 offset-md-4 offset-2 bg-primary-subtle rounded p-3">
+					<form>
+						<div id="1">
+						<!-- Real-Time-Quotation-Start -->
+						<div class="mb-3">
+							<label for="length" class="form-label">Length (m):</label>
+							<input type="number" class="form-control" id="length" step="0.01">
+						</div>
+						<div class="mb-3">
+							<label for="width" class="form-label">Width (m):</label>
+							<input type="number" class="form-control" id="width" step="0.01">
+						</div>
+						<div class="mb-3">
+							<label for="pricePerSqm" class="form-label">Price per sqm (PHP):</label>
+							<input type="number" class="form-control" id="pricePerSqm" step="0.01">
+						</div>
+						
+						<button type="button" class="btn btn-primary float-end">Next</button>
+						</div>
+						<!-- Real-Time-Quotation-End -->
+					</form>
+				</div>
+			</div>
 
-</style>
+		</div>
 
-</head>
-<script>
+		<footer class="footer">
+			<div class="container text-center">
+				<span>&copy; All Right Reserved 2023</span>
+			</div>
+		</footer>
+
+		<nav class="navbar sticky-bottom bg-success-subtle p-3">
+			<div class="container-fluid">
+				<div class="row">
+					<p class="fw-bold">Total sqm: <span id="totalSqm">0.00</span></p>
+					<p class="fw-bold">Quotation: <span>&#8369;</span><span id="quotation">0.00</span></p>
+				</div>
+			</div>
+		</nav>
+
+		
+
+		<!--code end here-->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
+			integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+			integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script>
+  $(function(){
+    $.get("navbar.html", function(data) {
+      $("body").prepend(data); // Append content.html data into the #container div
+    });
+  });
+</script>
+
+		<script>
 	function passda(idx,idy,idz){
 		 var XadimensionID = idx;
 		 var YadimensionID = idy;
@@ -164,77 +185,8 @@ function HideBeforeSee(){
 }
 
 </script>
-<body onload="HideBeforeSee()">
 
-<!--Code start here Nav1-->
-<nav class="dropdownmenu">
-  <ul>
-    <li><a style="font-size:2vw" href="index.html">Home</a></li>
-    <li><a style="font-size:2vw" href="PastProjects.html">About Me</a></li>
-    <li><a style="font-size:2vw" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfyNSatpshOEoCTmX16cZmfTqI3ruMK9FcJexK-f5weIxJ7eg/viewform?embedded=true target=_blank">Contact Us</a></li>
-    <li><a style="font-size:2vw" href="Quotation.html">Quotation</a></li>
-  </ul>
-</nav>
-<!--Code end Here nav1-->
-
-<!--Code start here Nav2-->
-<nav class="dropdownmenu">
-  <ul>
-    <li><a style="font-size:2vw" target="_blank" href="https://www.facebook.com/profile.php?id=61551045083008">Facebook</a></li>
-  </ul>
-</nav>
-<!--Code end Here nav2-->
-
-<form>
-
-<!--I Give Up Im going to do it locally and just hide it-->
-<div id="HideMyShame">
-<center>
-<h1 style="font-size:3vw"><br><br><br>Average Cost of Construction</h1>
-<div class="row">
-    <div class="column" style="background-color:#aaa;">
-      <br>
-      <img src="UnfinishedHousing.jpg" width="60%" height="60%" div class="logo">
-      <p style="font-size:1vw">Bare Housing</p>
-      <p style="font-size:1vw">22,000 php/sqm</p>
-    </div>
-    <div class="column" style="background-color:#FFFFFF;">
-        <br>
-        <img src="standardhousing.jpg" width="60%" height="60%" div class="logo">
-        <p style="font-size:1vw">Standard Housing</p>
-        <p style="font-size:1vw">35,000 php/sqm</p>
-      </div>
-      <div class="column" style="background-color:#ADD8E6;">
-        <br>
-        <img src="Highendhouse.jpg" width="60%" height="60%" div class="logo">
-        <p>High-End Housing</p>
-        <p>45,000 php/sqm</p>
-      </div>
-    
-  </div>
-
-  <!--Real-Time-Quotation-Start-->
-  <div>
-	<label for="length">Length (m):</label>
-	<input type="number" id="length" step="0.01">
-</div>
-
-<div>
-	<label for="width">Width (m):</label>
-	<input type="number" id="width" step="0.01">
-</div>
-
-<div>
-	<label for="pricePerSqm">Price per sqm (PHP):</label>
-	<input type="number" id="pricePerSqm" step="0.01">
-</div>
-
-<div>
-	<p>Total sqm: <span id="totalSqm">0.00</span></p>
-	<p>Quotation: <span>&#8369;</span><span id="quotation">0.00</span></p>
-</div>
-
-<script>
+		<script>
 	const lengthInput = document.getElementById("length");
 	const widthInput = document.getElementById("width");
 	const pricePerSqmInput = document.getElementById("pricePerSqm");
@@ -264,154 +216,5 @@ function HideBeforeSee(){
 	// Initial calculation
 	calculateQuotation();
 </script>
-<!--Real-Time-Quotation-End-->
-
-<div class="column" style="background-color:#ADD8E6;">
-<div class="row">
-        <br>
-	<form method ="get" action = "/QoutationResults.html">
-	<table>
-		<tr>
-			<td>X Dimension in Meters</td>
-			<td><input type ="text" name = "Xdimension" id = "XadimensionID" required></td>
-		</tr>
-		<tr>
-			<td>Y Dimension in Meters</td>
-			<td><input type ="text" name = "Ydimension" id = "YadimensionID" required></td>
-		</tr>
-		<tr>
-			<td>Z Dimension in Meters</td>
-			<td><input type ="text" name = "Zdimension" id = "ZadimensionID" required></td>
-		</tr>
-		<td></td>
-	</table>
-	</form>
-        <!--end of data sent to next form-->
-		
-
-		<!--First need to get the dimensions for sqm computations-->
-        
-      </div>
-      <div class="column" style="background-color:#ADD8E6;">
-        <br>
-        
-        <label for ="ZDimension">Z Dimensions:</label><br>
-	<input id = "ZadimensionID2" type ="text">
-        
-      </div>
-	
-</div> <!--END OF COLLUMS FOR COLLECTION -->
-<button type = "button" onclick="HideShame(document.getElementById('XadimensionID').value,document.getElementById('YadimensionID').value,document.getElementById('ZadimensionID').value)">Process Selection</button>
-<center>
-	<p style="font-size:1vw">All Right Reserved 2023</p></center>
-</center>
-</div>
-
-</div><!--End of Hiding Shame-->
-
-
-
-<div id="Reciept">
-<!--Start of Data Display-->
-<br><br><br><br>
-<div class="row">
-    <div class="column2" style="background-color:#1ca5c7;"><!--first row which is west-->
-<img src="logoTemplate.jpg" width="15%" height="15%" div class="logo"></img>  
-      <br><br>
-	  <table> <!--Table the collums so that it looks nice-->
-		<tr>
-			<td>Items Picked</td><br>
-			<td><p id = "itemRow1"></p></td>
-		</tr>
-		<tr>
-			<td>Chosen Laborer</td>
-			<td><p id = "itemRow2"></td>
-		</tr>
-		<tr>
-			<td>Expected Time</td><br>
-			<td><p id = "itemRow3"></td>
-		</tr>
-		<td></td>
-	</table>
-      
-    </div><!--end of first row which is west-->
-    <div class="column2" style="background-color:#cc6f18;"><!--second row which is east-->
-        <br><h3>JLT25 Architechtural Design Services</h3>
-        <table> <!--Table the collums so that it looks nice-->
-			<tr>
-				<td>Cost for total Cubic meter</td><br>
-			</tr>
-			<tr>
-				<td><p>₱</p></td>
-				<td><p id = "CostRow1"></p></td>
-				<td><p> Pesos</p></td>
-			</tr><!--End For Total Cost of Construction-->
-			<tr>
-				<td>Labor Cost</td><br>
-			</tr>
-			<tr>
-				<td><p> ₱ </p></td>
-				<td><p id = "CostRow2"></p></td>
-				<td><p> Pesos</p></td>
-			</tr><!--End For Total Cost of Laborer-->
-			<tr>
-				<td>Time Taken For Each Item</td><br>
-			</tr>
-			<tr>
-				<td><p> ₱ </p></td>
-				<td><p id = "CostRow3"></p></td>
-				<td><p> Pesos</p></td>
-			</tr><!--End For Total Cost of Items-->
-			<td></td>
-		</table>
-      </div><!--end of second row which is east-->
-      
-    
-  </div>
-</div><!--End of Data Display-->
-
-
-<div id="breakdowning"><!--start of Data breakdown hide-->
-<div class="column3" style="background-color:#3ccc18;">
-<!--start of Breakdown-->
-<br><br>
-<h2>BreakDown of Cost</h2>
-<table> <!--Table the collums so that it looks nice-->
-	<tr>
-		<td></td>
-	</tr>
-	<tr>
-		<td><p>X Dimension Which is: </p><p id = "X-Dimension"></p><p> Multiplied by Y-Dimension: </p><p id = "Y-Dimension"></p><p> and Multiplied by Z-Dimension: </p><p id = "Z-Dimension"></p><br></td>
-	</tr><!--End For Total Cost of Construction-->
-	<tr>
-		<td><p>We Get the Cubic Meter: </p><p id = "Cubic-Meter"></p><p> Which is then Multiplied again from the type of finishing selected by the radio button: </p><!--Put Radio Button Value here--></td>
-	</tr>
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr><!--End For Total Cost of Laborer-->
-	<tr>
-		<td></td>
-	</tr>
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr><!--End For Total Cost of Items-->
-	<td></td>
-</table>
-
-
-
-
-<!--end of Breakdown-->
-
-</div><!--end of Data breakdown hide-->
-</div><!--end of Collum3-->
-
-
-
-
-
+	</body>
 </html>
