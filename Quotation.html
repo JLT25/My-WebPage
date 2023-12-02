@@ -1,117 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Quotation Estimations</title>
-		<link rel="stylesheet" href="css/style.css" />
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-			rel="stylesheet">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotation Estimations</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet">
 
-		<style>
-				.card-img-top {
-					width: 100%;
-					height: 25vh;
+    <style>
+.card-img-top {
+	width: 100%;
+height: 25vh;
 					object-fit: cover;
 				}
-			</style>
-	</head>
 
-	<body>
+        input:invalid {
+    border: 1px solid red;
+}
 
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col p-2">
-					<h1 style="font-size:3vw">Average Cost of Construction</h1>
-				</div>
-			</div>
+/* Style for valid inputs */
+input:valid {
+    border: 1px solid green;
+}
+</style>
+  </head>
 
-			<div class="row">
-				<div class="col-md-4 p-2">
-					<div class="card">
-						<img src="UnfinishedHousing.jpg" class="card-img-top"
-							alt="Unfinished Housing">
-						<div class="card-body">
-							<p class="card-text">Bare Housing</p>
-							<p class="card-text">22,000 php/sqm</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 p-2">
-					<div class="card">
-						<img src="standardhousing.jpg" class="card-img-top" alt="Standard Housing">
-						<div class="card-body">
-							<p class="card-text">Standard Housing</p>
-							<p class="card-text">35,000 php/sqm</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 p-2">
-					<div class="card">
-						<img src="Highendhouse.jpg" class="card-img-top" alt="High-End Housing">
-						<div class="card-body">
-							<p class="card-text">High-End Housing</p>
-							<p class="card-text">45,000 php/sqm</p>
-						</div>
-					</div>
-				</div>
-			</div>
+  <body>
 
-			<div class="row">
-				<div class="col-md-4 col-8 offset-md-4 offset-2 bg-primary-subtle rounded p-3">
-					<form>
-						<div id="1">
-						<!-- Real-Time-Quotation-Start -->
-						<div class="mb-3">
-							<label for="length" class="form-label">Length (m):</label>
-							<input type="number" class="form-control" id="length" step="0.01">
-						</div>
-						<div class="mb-3">
-							<label for="width" class="form-label">Width (m):</label>
-							<input type="number" class="form-control" id="width" step="0.01">
-						</div>
-						<div class="mb-3">
-							<label for="pricePerSqm" class="form-label">Price per sqm (PHP):</label>
-							<input type="number" class="form-control" id="pricePerSqm" step="0.01">
-						</div>
-						
-						<button type="button" class="btn btn-primary float-end">Next</button>
-						</div>
-						<!-- Real-Time-Quotation-End -->
-					</form>
-				</div>
-			</div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col p-2">
+          <h1 style="font-size:3vw">Average Cost of Construction</h1>
+        </div>
+      </div>
+      <form id="form">
+        <div class="row">
+          <div class="col-md-4 p-2">
 
-		</div>
+            <div class="input-group w-100">
 
-		<footer class="footer">
-			<div class="container text-center">
-				<span>&copy; All Right Reserved 2023</span>
-			</div>
-		</footer>
+              <div class="card w-100">
+                <img src="UnfinishedHousing.jpg" class="card-img-top"
+                  alt="Unfinished Housing">
+                <div class="card-body">
 
-		<nav class="navbar sticky-bottom bg-success-subtle p-3">
-			<div class="container-fluid">
-				<div class="row">
-					<p class="fw-bold">Total sqm: <span id="totalSqm">0.00</span></p>
-					<p class="fw-bold">Quotation: <span>&#8369;</span><span id="quotation">0.00</span></p>
-				</div>
-			</div>
-		</nav>
+                  <p class="card-text">Bare Housing</p>
+                  <p class="card-text">22,000 php/sqm</p>
+                  <input class="btn-check" type="radio" name="houseType"
+                    id="houseType1"
+                    checked data-price="22000">
+                  <label class="btn btn-outline-success" for="houseType1">Select</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 p-2">
+            <div class="input-group w-100">
 
-		
+              <div class="card w-100">
+                <img src="standardhousing.jpg" class="card-img-top"
+                  alt="Standard Housing">
+                <div class="card-body">
+                  <p class="card-text">Standard Housing</p>
+                  <p class="card-text">35,000 php/sqm</p>
+                  <input class="btn-check" type="radio" name="houseType"
+                    id="houseType2" data-price="35000">
+                  <label class="btn btn-outline-success" for="houseType2">Select</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 p-2">
+            <div class="input-group w-100">
 
-		<!--code end here-->
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
-			integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
-			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-			integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script>
+              <div class="card w-100">
+                <img src="Highendhouse.jpg" class="card-img-top"
+                  alt="High-End Housing">
+                <div class="card-body">
+                  <p class="card-text">High-End Housing</p>
+                  <p class="card-text">45,000 php/sqm</p>
+                  <input class="btn-check" type="radio" name="houseType"
+                    id="houseType3" data-price="45000">
+                  <label class="btn btn-outline-success" for="houseType3">Select</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row page">
+          <div
+            class="col-md-4 col-8 offset-md-4 offset-2 bg-primary-subtle rounded p-3">
+
+            <div id="1">
+              <div class="mb-3">
+                <label for="length" class="form-label">Length (m):</label>
+                <input type="number" class="form-control" id="length"
+                  step="0.01" data-required>
+              </div>
+              <div class="mb-3">
+                <label for="width" class="form-label">Width (m):</label>
+                <input type="number" class="form-control" id="width" step="0.01"
+                  data-required>
+              </div>
+              <div class="mb-3">
+                <label for="pricePerSqm" class="form-label">Price per sqm (PHP):</label>
+                <input type="number" class="form-control" id="pricePerSqm"
+                  value="22000"
+                  step="0.01" readonly data-required>
+              </div>
+
+              <button type="button"
+                class="btn btn-primary float-end next-button">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row page" style="display: none;">
+          <div
+            class="col-md-4 col-8 offset-md-4 offset-2 bg-primary-subtle rounded p-3">
+
+            <div class="mb-3">
+              <label for="floorNo" class="form-label">No. of Floor(s)</label>
+              <input type="number" class="form-control" id="floorNo" min="1"
+                step="1" data-required>
+            </div>
+
+            <button type="button"
+              class="btn btn-secondary float-start back-button">Back</button>
+            <button type="button" class="btn btn-primary float-end next-button">Next</button>
+          </div>
+        </div>
+        <div class="floors">
+
+        </div>
+
+        <div class="row page" style="display: none;">
+          <div
+            class="col-md-4 col-12 offset-md-4 bg-primary-subtle rounded p-3">
+            <h3>Plumbing(Construction of septic vault, applicable in all Groups)</h3>
+            <div class="mb-3 form-floating">
+              <input class="form-control septicVaultSize" type="number"
+                id="septicVaultSize" min="0.1" step="0.1" data-required
+                data-fee="24">
+              <label class="form-label" for="septicVaultSize">Septic Vault(cu.
+                m.)</label>
+            </div>
+
+            <button type="button"
+              class="btn btn-secondary float-start back-button">Back</button>
+            <button type="button" class="btn btn-primary float-end next-button">Next</button>
+          </div>
+        </div>
+
+        <div class="row page" style="display: none;">
+          <div
+            class="col-md-4 col-12 offset-md-4 bg-primary-subtle rounded p-3">
+            <h3>Electrical(Electrical Fee)</h3>
+            <div class="mb-3 form-floating">
+              <input class="form-control switchesCount hasSwitches"
+                type="number"
+                id="switchesCount" min="1" step="1" data-required data-fee="1.5"
+                data-min="0">
+              <label class="form-label" for="switchesCount">Switches</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control lightingsCount hasSwitches"
+                type="number"
+                id="lightingsCount" min="1" step="1" data-required
+                data-fee="1.5" data-min="0">
+              <label class="form-label" for="lightingsCount">Lightings</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control outletCount hasSwitches" type="number"
+                id="outletCount" min="1" step="1" data-required data-fee="1.5"
+                data-min="0">
+              <label class="form-label" for="outletCount">Convinience Outlet</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control masterSwitchCount hasSwitches"
+                type="number"
+                id="masterSwitchCount" min="1" step="1" data-required
+                data-fee="24" data-min="0">
+              <label class="form-label" for="masterSwitchCount">Master Switch</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control branchCircuit hasSwitches"
+                type="number"
+                id="branchCircuit" min="1" step="1" data-required data-fee="3"
+                data-min="0">
+              <label class="form-label" for="branchCircuit">Branch Circuit</label>
+            </div>
+            <p>Installation Fee</p>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="unitType"
+                id="residential" value="30" checked data-type="residential">
+              <label class="form-check-label" for="residential">
+                Residential P30
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="unitType"
+                id="commercial" value="60" data-type="commercial">
+              <label class="form-check-label" for="commercial">
+                Commercial P60
+              </label>
+            </div>
+
+            <button type="button"
+              class="btn btn-secondary float-start back-button">Back</button>
+            <button type="button" class="btn btn-primary float-end next-button">Next</button>
+          </div>
+        </div>
+
+        <div class="commercialForm">
+
+        </div>
+
+        <div class="row page" style="display: none;">
+          <div
+            class="col-md-4 col-12 offset-md-4 bg-primary-subtle rounded p-3">
+            <h3>Electrical(Motors and Controlling Apparatus, per unit)</h3>
+            <div class="mb-3 form-floating">
+              <input class="form-control motorPoint2 hasMotors" type="number"
+                id="motorPoint2" min="1" step="1" data-fee="5" data-min="0">
+              <label class="form-label" for="motorPoint2">Up to .2KW</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control motorPoint2To1 hasMotors" type="number"
+                id="motorPoint2To1" min="1" step="1" data-fee="10" data-min="0">
+              <label class="form-label" for="motorPoint2To1">Above .2KW up to
+                1KW</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control motor1to5 hasMotors" type="number"
+                id="motor1to5"
+                min="1" step="1" data-fee="20" data-min="0">
+              <label class="form-label" for="motor1to5">Above 1KW up to 5KW</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control motor5to10 hasMotors" type="number"
+                id="motor5to10" min="1" step="1" data-fee="30" data-min="0">
+              <label class="form-label" for="motor5to10">Above 5KW up to 10KW</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control motor10to20 hasMotors" type="number"
+                id="motor10to20" min="1" step="1" data-fee="40" data-min="0">
+              <label class="form-label" for="motor10to20">Above 10KW up to 20KW</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control motor20above" type="number"
+                id="motor20above" min="1" step="1" data-fee="2" data-start="20"
+                data-min="0">
+              <label class="form-label" for="motor20above">Every KW or fraction
+                thereof above 20KW</label>
+            </div>
+
+            <button type="button"
+              class="btn btn-secondary float-start back-button">Back</button>
+            <button type="button" class="btn btn-primary float-end next-button">Next</button>
+          </div>
+        </div>
+
+        <div class="row page" style="display: none;">
+          <div
+            class="col-md-4 col-12 offset-md-4 bg-primary-subtle rounded p-3">
+            <h3>Electrical(Generators/UPS Capacity(AC or DC), per unit)</h3>
+            <div class="mb-3 form-floating">
+              <input class="form-control generators1 hasGenerator" type="number"
+                id="generators1" min="1" step="1" data-fee="40" data-min="0">
+              <label class="form-label" for="generators1">1KW or less</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control generators1to5 hasGenerator"
+                type="number"
+                id="generators1to5" min="1" step="1" data-fee="150" data-min="0">
+              <label class="form-label" for="generators1to5">above 1KW up to 5KW</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control generators5to10 hasGenerator"
+                type="number"
+                id="generators5to10" min="1" step="1" data-fee="800"
+                data-min="0">
+              <label class="form-label" for="generators5to10">above 5KW up to
+                10KW</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control generators20above" type="number"
+                id="generators20above" min="1" step="1" data-fee="2300"
+                data-start="20" data-min="0">
+              <label class="form-label" for="generators20above">Every KW or
+                fraction thereof in excess of 20KW</label>
+            </div>
+
+            <button type="button"
+              class="btn btn-secondary float-start back-button">Back</button>
+            <button type="button" class="btn btn-primary float-end next-button">Next</button>
+          </div>
+        </div>
+
+        <div class="row page" style="display: none;">
+          <div
+            class="col-md-4 col-12 offset-md-4 bg-primary-subtle rounded p-3">
+            <h3>Electrical(Pole/Attachment Location Plan Permit)</h3>
+            <div class="mb-3 form-floating">
+              <input class="form-control poleLocation hasPole" type="number"
+                id="poleLocation" min="1" step="1" data-fee="30" data-min="0">
+              <label class="form-label" for="poleLocation">Pole Location Plan
+                Permit</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control attachmentLocation hasPole"
+                type="number"
+                id="attachmentLocation" min="1" step="1" data-fee="30"
+                data-min="0">
+              <label class="form-label" for="attachmentLocation">Attachment
+                Location Plan Permit</label>
+            </div>
+
+            <button type="button"
+              class="btn btn-secondary float-start back-button">Back</button>
+            <button type="button" class="btn btn-primary float-end next-button">Next</button>
+          </div>
+        </div>
+
+        <div class="row page" style="display: none;">
+          <div
+            class="col-md-4 col-12 offset-md-4 bg-primary-subtle rounded p-3">
+            <h3>Electrical(Aggregate Connected Load)</h3>
+            <div class="mb-3 form-floating">
+              <input class="form-control totalConnectedLoad" type="number"
+                id="totalConnectedLoad" min="1" step="1" data-fee="30"
+                data-min="0">
+              <label class="form-label" for="totalConnectedLoad">Total Connected
+                Load (KVA)</label>
+            </div>
+
+            <button type="button"
+              class="btn btn-secondary float-start back-button">Back</button>
+            <button type="button" class="btn btn-primary float-end next-button">Next</button>
+          </div>
+        </div>
+
+        <div class="row page" style="display: none;">
+          <div
+            class="col-md-4 col-12 offset-md-4 bg-primary-subtle rounded p-3">
+            <h3>Electrical(Aggregate Transformer Capacity)</h3>
+            <div class="mb-3 form-floating">
+              <input class="form-control transformerCapacity" type="number"
+                id="transformerCapacity" min="1" step="1">
+              <label class="form-label" for="transformerCapacity">Installed
+                capacity (KVA)</label>
+            </div>
+
+            <h3>Electrical(Aggregate Generators/UPS Capacity)</h3>
+            <div class="mb-3 form-floating">
+              <input class="form-control generatorsCapacity" type="number"
+                id="generatorsCapacity" min="1" step="1">
+              <label class="form-label" for="generatorsCapacity">Generators
+                capacity (KVA)</label>
+            </div>
+
+            <button type="button"
+              class="btn btn-secondary float-start back-button">Back</button>
+            <button type="button"
+              class="btn btn-primary float-end summary-button">Summary</button>
+          </div>
+        </div>
+
+        <div class="row summary" style="display: none;">
+          <div
+            class="col-md-6 col-12 offset-md-3 bg-primary-subtle rounded p-3">
+            <h1>Summary</h1>
+            <div class="summary-text">
+              <h3 id="totalSqmSummary">Total Sqm: </h3>
+              <h3 id="quotationTotalSummary">Quotation: </h3>
+
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Fee</th>
+                    <th scope="col">Total Fee</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+                  <tr id="floorCountSummaryRow">
+                    <td>No. of Floor(s)</td>
+                    <td id="floorCountSummary">1</td>
+                    <td id="floorCountPrice">0</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <button type="button"
+              class="btn btn-secondary float-start summary-back">Back</button>
+            <!-- <button type="button" class="btn btn-primary float-end summary-button">Summary</button> -->
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <footer class="footer">
+      <div class="container text-center">
+        <span>&copy; All Right Reserved 2023</span>
+      </div>
+    </footer>
+
+    <nav class="navbar sticky-bottom bg-success-subtle p-3">
+      <div class="container-fluid">
+        <div class="row">
+          <p class="fw-bold">Total sqm: <span id="totalSqm">0.00</span> sqm</p>
+          <p class="fw-bold">Quotation: <span id="quotation">0.00</span></p>
+        </div>
+      </div>
+    </nav>
+
+    <!--code end here-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
+      integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
   $(function(){
     $.get("navbar.html", function(data) {
       $("body").prepend(data); // Append content.html data into the #container div
@@ -119,93 +450,771 @@
   });
 </script>
 
-		<script>
-	function passda(idx,idy,idz){
-		 var XadimensionID = idx;
-		 var YadimensionID = idy;
-		 var ZadimensionID = idz;
+    <script>
+      function updateSummary(){
+        
+        let summary = $('.summary-text');        
+        $('#totalSqmSummary').text(`Total Sqm: ${totalSqm}`);
+        quotationTotal = 0;
 
-		 sessionStorage.setItem("XadimensionsIS",XadimensionID);
-		 sessionStorage.setItem("YadimensionsIS",YadimensionID);
-		 console.log(XadimensionID);
-	}
+        let floorCount = parseInt($(`#floorNo`).val());
+        $(`#floorCountSummary`).text(`x${floorCount}`);
+        quotationTotal = basePrice * floorCount;
 
-	function HideShame(idx,idy,idz) {
-  var x = document.getElementById("HideMyShame");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+        $(`#floorCountPrice`).text(`${formatCurrency(quotationTotal)}`);
+
+        $('#buildingResidentialSqm').text(`${totalSqm}`);
+
+        $('#floorCountSummaryRow').nextAll().remove();
+
+        let toAddExcessPlumbing = ``;
+
+        $('.hasPlumbingExcess').each(function(){
+          let fee = 24;
+          let count = parseInt($(this).val());
+          if(count > 0){
+            let min = parseInt($(this).data('min'));
+            let myFee = parseInt($(this).data('fee'));
+            if(min == 0){
+              fee = myFee * (count - min);
+            }
+            else if(count > min){
+              fee += myFee * (count - min);
+            }
+
+            let description = $(this).data('description');
+            toAddExcessPlumbing += `<tr><th scope="row" >${description} x${count}</th>
+                    <td>${myFee}</td>
+                    <td>${fee}</td></tr>`;
+            quotationTotal += fee;
+          }
+        });
+
+
+        if(toAddExcessPlumbing.length > 0){
+          
+          let plumbingExcess = `<tr id="plumbingExcess" class="table-secondary">
+                    <td colspan="3"><h4 class="text-center">Plumbing (Every fixture in excess of one unit)</h4></td>
+                  </tr>` + toAddExcessPlumbing;
+          $('tbody').find('tr:last').after(plumbingExcess);
+        }
+
+        let toAddPlumbingSpecial = ``;
+
+        $('.hasPlumbingSpecial').each(function(){
+          toAddPlumbingSpecial += getProcessFees($(this));
+        });
+
+
+        if(toAddPlumbingSpecial.length > 0){
+          
+          let plumbingSpecial = `<tr id="plumbingSpecial" class="table-secondary">
+                    <td colspan="3"><h4 class="text-center">Plumbing (Special Plumbing Fixtures)</h4></td>
+                  </tr>` + toAddPlumbingSpecial;
+          $('tbody').find('tr:last').after(plumbingSpecial);
+        }
+
+        let septicFee = 24;
+        let septicSize = parseFloat($(`#septicVaultSize`).val());
+        if (septicSize > 5){
+          septicFee += 7 * (septicSize-5);
+        }
+        let toAddSeptic = `<tr><th scope="row">Septic Vault</th>
+                  <td>${septicSize} cu. m.</td>
+                  <td>${formatCurrency(septicFee)}</td></tr>`;
+        quotationTotal += septicFee;
+        
+        let septic = `<tr id="septic" class="table-secondary">
+                  <td colspan="3"><h4 class="text-center">Plumbing(Construction of septic vault, applicable in all Groups)</h4></td>
+                </tr>` + toAddSeptic;
+        $('tbody').find('tr:last').after(septic);
+
+
+        let toAddCommercialAppliances = ``;
+        $('.hasCommercialAppliance').each(function(){
+          toAddCommercialAppliances += getProcessFees($(this));
+        });
+
+        if(toAddCommercialAppliances.length > 0){
+          
+          let commercialAppliances = `<tr id="commercialAppliances" class="table-secondary">
+                    <td colspan="3"><h4 class="text-center">(Appliances Equipment or Apparatus for Commercial/Industrial use)</h4></td>
+                  </tr>` + toAddCommercialAppliances;
+          $('tbody').find('tr:last').after(commercialAppliances);
+        }
+
+        let toAddCommercialEquipments = ``;
+        $('.hasCommercialEquipment').each(function(){
+          toAddCommercialEquipments += getProcessFees($(this));
+        });
+
+        if(toAddCommercialEquipments.length > 0){
+          
+          let commercialEquipments = `<tr id="commercialEquipments" class="table-secondary">
+                    <td colspan="3"><h4 class="text-center">Electrical(Appliances Equipment or Apparatus for Commercial/Industrial use)</h4></td>
+                  </tr>` + toAddCommercialEquipments;
+          $('tbody').find('tr:last').after(commercialEquipments);
+        }
+
+        let toAddMotionPicture = ``;
+        $('.hasMotion').each(function(){
+          toAddMotionPicture += getProcessFees($(this));
+        });
+
+        if(toAddMotionPicture.length > 0){
+          
+          let commercialMotion = `<tr id="commercialMotion" class="table-secondary">
+                    <td colspan="3"><h4 class="text-center">Electrical(Motion Picture Projector for commercial use)</h4></td>
+                  </tr>` + toAddMotionPicture;
+          $('tbody').find('tr:last').after(commercialMotion);
+        }        
+        
+        let toAddTV = ``;
+        $('.hasTV').each(function(){
+          toAddTV += getProcessFees($(this));
+        });
+
+        if(toAddTV.length > 0){
+          
+          let commercialTV = `<tr id="commercialTV" class="table-secondary">
+                    <td colspan="3"><h4 class="text-center">Electrical(TV Cameras for commercial/industrial use)</h4></td>
+                  </tr>` + toAddTV;
+          $('tbody').find('tr:last').after(commercialTV);
+        }
+
+        let toAddSwitches = ``;
+        $(`.hasSwitches`).each(function(){
+          toAddSwitches += getProcessFees($(this));
+        });
+
+        if(toAddSwitches.length > 0){
+          
+          let switches = `<tr id="switches" class="table-secondary">
+                    <td colspan="3"><h4 class="text-center">Electrical(Electrical Fee)</h4></td>
+                  </tr>` + toAddSwitches;
+          $('tbody').find('tr:last').after(switches);
+        }
+
+        let toAddMotors = ``;
+        $('.hasMotors').each(function(){
+          toAddMotors += getProcessFees($(this));
+        });
+
+        if(toAddMotors.length > 0){
+          let motor20above = $(".motor20above");
+          let count = parseInt(motor20above.val());
+          if(count > 0){
+            let fee = 0;
+            let min = parseFloat(motor20above.data('min'));
+            let myFee = parseFloat(motor20above.data('fee'));
+            fee += myFee * 20 * count;
+            let description = "Number of " + $(`label[for="${motor20above.attr('id')}"]`).text();
+            toAddMotors += `<tr><th scope="row" >${description} x${count}</th>
+                    <td>${myFee}</td>
+                    <td>${fee}</td></tr>`;
+            quotationTotal += fee;
+          }
+
+          let commercialMotors = `<tr id="commercialMotors" class="table-secondary">
+                    <td colspan="3"><h4 class="text-center">Electrical(Motors and Controlling Apparatus, per unit)</h4></td>
+                  </tr>` + toAddMotors;
+          $('tbody').find('tr:last').after(commercialMotors);
+        }
+
+        let toAddGenerators = ``;
+        $('.hasGenerator').each(function(){
+          toAddGenerators += getProcessFees($(this));
+        });
+
+        if(toAddGenerators.length > 0){
+          let generators20above = $(".generators20above");
+          let count = parseInt(generators20above.val());
+          if(count > 0){
+            let fee = 0;
+            let min = parseFloat(generators20above.data('min'));
+            let myFee = parseFloat(generators20above.data('fee'));
+            fee += myFee * count;
+            let description = "Number of " + $(`label[for="${generators20above.attr('id')}"]`).text();
+            toAddGenerators += `<tr><th scope="row" >${description} x${count}</th>
+                    <td>${myFee}</td>
+                    <td>${fee}</td></tr>`;
+            quotationTotal += fee;
+          }
+
+          let generators = `<tr id="generators" class="table-secondary">
+                    <td colspan="3"><h4 class="text-center">Electrical(Generators/UPS Capacity(AC or DC), per unit)</h4></td>
+                  </tr>` + toAddGenerators;
+          $('tbody').find('tr:last').after(generators);
+        }
+
+        let toAddPole = ``;
+        $('.hasPole').each(function(){
+          toAddPole += getProcessFees($(this));
+        });
+
+        if(toAddPole.length > 0){
+          
+          let poles = `<tr id="poles" class="table-secondary">
+                    <td colspan="3"><h4 class="text-center">Electrical(Pole/Attachment Location Plan Permit)</h4></td>
+                  </tr>` + toAddPole;
+          $('tbody').find('tr:last').after(poles);
+        }
+
+        let loadsTotal = parseInt($(`.totalConnectedLoad`).val());
+        if(loadsTotal > 0){
+          let fee = 0;
+          if(loadsTotal < 1000){
+            fee = 6325 + (15 * (loadsTotal- 200));
+          }
+          else{
+            fee = 16825 + (10 * (loadsTotal - 1000));
+          }
+
+          quotationTotal += fee;
+          let toAddLoads = `<tr><th scrope="row">Total Aggregate Connected Load</th>
+                  <td>${loadsTotal} KVA</td>
+                  <td>${formatCurrency(fee)}</td></tr>`;
+
+          let loads = `<tr id="loads" class="table-secondary">
+                    <td colspan="3"><h4 class="text-center">Electrical(Aggregate Connected Load)</h4></td>
+                  </tr>` + toAddLoads;
+          $('tbody').find('tr:last').after(loads);
+        }
+
+
+        let transformerTotal = parseInt($(`.transformerCapacity`).val());
+        if(transformerTotal > 0){
+          let fee = 0;
+          if(transformerTotal <= 500){
+            fee = 40
+          }
+          else if(transformerTotal > 5 && transformerTotal <= 50){
+            fee = 40 + (5 * (transformerTotal - 5));
+          }
+          else if(transformerTotal > 50 && transformerTotal <= 300){
+            fee = 625 + (5 * (transformerTotal - 50));
+          }
+          else if(transformerTotal > 300 && transformerTotal <= 1000){
+            fee = 1265 + (3 * (transformerTotal - 300));
+          }
+          else if(transformerTotal > 0){
+            fee = 3365 + (2 * (transformerTotal - 1000));
+          }
+
+          quotationTotal += fee;
+          let toAddTransformer = `<tr><th scrope="row">Total Aggregate Transformer Capacity</th>
+                  <td>${transformerTotal} KVA</td>
+                  <td>${formatCurrency(fee)}</td></tr>`;
+
+          let transformers = `<tr id="transformers" class="table-secondary">
+                    <td colspan="3"><h4 class="text-center">Electrical(Aggregate Transformer Capacity)</h4></td>
+                  </tr>` + toAddTransformer;
+          $('tbody').find('tr:last').after(transformers);
+        }
+        
+        let generatorsTotal = parseInt($(`.generatorsCapacity`).val());
+        if(generatorsTotal > 0){
+          let fee = 0;
+          if(generatorsTotal <= 5){
+            fee = 40
+          }
+          else if(generatorsTotal > 5 && generatorsTotal <= 50){
+            fee = 40 + (5 * (generatorsTotal-5));
+          }
+          else if(generatorsTotal > 50 && generatorsTotal <= 300){
+            fee = 625 + (4 * (generatorsTotal-50));
+          }
+          else if(generatorsTotal > 300 && generatorsTotal <= 1000){
+            fee = 1265 + (3 * (generatorsTotal-300));
+          }
+          else if (generatorsTotal > 1000){            
+            fee = 3365 + (2 * (generatorsTotal-1000));
+          }
+
+          quotationTotal += fee;
+          let toAddGenerators = `<tr><th scrope="row">Total Aggregate Generators/UPS Capacity</th>
+                  <td>${generatorsTotal} KVA</td>
+                  <td>${formatCurrency(fee)}</td></tr>`;
+
+          let generators = `<tr id="generators" class="table-secondary">
+                    <td colspan="3"><h4 class="text-center">Electrical(Aggregate Generators/UPS Capacity)</h4></td>
+                  </tr>` + toAddGenerators;
+          $('tbody').find('tr:last').after(generators);
+        }
+        
+        
+        $('#quotationTotalSummary').text(`Quotation: ${formatCurrency(quotationTotal)}`);
+
+      }
+
+
+
+      function getProcessFees(elem){
+        let row = ``;
+        let fee = 0;
+        let count = parseInt(elem.val());
+        if(count > 0){
+          let min = parseFloat(elem.data('min'));
+          let myFee = parseFloat(elem.data('fee'));
+          if(count > min){
+            fee += myFee * (count - min);
+          }
+          else{
+            fee = myFee;
+          }
+
+          let description = "Number of " + $(`label[for="${elem.attr('id')}"]`).text();
+          row += `<tr><th scope="row" >${description} x${count}</th>
+                  <td>${myFee}</td>
+                  <td>${fee}</td></tr>`;
+          quotationTotal += fee;
+        }
+        return row;
+      }
+
+  var quotationTotal = 0;
+  var totalSqm;
+  var currentPage = 0;
+  var pages;
+  var maxPage = 1;
+  var basePrice = 22000;
+
+  function updateRequireFields(pageElem, add=true){
+    $(pageElem).each(function(){
+
+        $(this).find('input[data-required]').each(function(){
+          if(!$(this).is(':visible')){
+            $(this).prop('required', false);
+          }
+          else{
+            $(this).prop('required', add);
+          }
+
+      
+        });
+      });
   }
 
+  function isRoomAreaIsValid(pageElem){
+    if($(pageElem).hasClass('floor-config')){
+      var hasRestRoom = $(pageElem).find('.restRoomToogle').is(':checked');
+      if(hasRestRoom){
+        var restRoomWidth = parseFloat($(pageElem).find('.restRoomWidth').val());
+        var restRoomLength = parseFloat($(pageElem).find('.restRoomLength').val());
+        var restRoomSqm = restRoomWidth * restRoomLength;
+        if(restRoomSqm > totalSqm){
+          alert('Invalid Restroom sqm!');
+          return false;
+        }
+      }
+    }
+
+    return true;
+  }
+
+  $(document).ready(function(){
+    currentPage = 0;
+    pages = $('.page');
+    maxPage = pages.length;
+
+    updateRequireFields(pages[currentPage]);
+
+    $('.summary-button').on('click', function(){
+      $('.page').hide();
+      $('.summary').show();
+      $('.sticky-bottom').hide();
+      updateSummary();
+    });
+
+    $('.summary-back').on('click', function(){
+      $('.summary').hide();
+      $('.sticky-bottom').show();
+      $(pages[currentPage]).show();
+    });
+
+    $('#form').on('click', '.next-button', function(){
+      if (!$('#form').get(0).checkValidity()) {
+        alert('Please fill up the form correctly!');
+        return;
+      }
+
+      if(isRoomAreaIsValid(pages[currentPage])){
+        currentPage++;
+        if(currentPage > maxPage-1){
+          currentPage = maxPage-1;
+        }
+        else{
+            $('.page').hide();
+            console.log(`currentPage = ${currentPage}`);
+            $(pages[currentPage]).show();
+            updateRequireFields(pages[currentPage]); 
+        }
+      }
+    });
+
+    $('#form').on('click', '.back-button', function(){
+      currentPage--;
+      
+      if(currentPage < 0){
+        currentPage = 0;
+      }
+      else{
+        $('.page').hide();
+        $(pages[currentPage]).show();
+        updateRequireFields(pages[currentPage + 1], false);
+      }
+    });
+
+    $('#floorNo').change(floorCountUpdated);
+    $('#floorNo').on('input', floorCountUpdated);
+
+    $('#form').on('click', '.restRoomToogle', function(){
+      
+      var closestRestRoomOptions = $(this).closest('.floor-config').find('.restRoomOptions');
+        if($(this).is(':checked')){
+          closestRestRoomOptions.show();
+          updateRequireFields(pages[currentPage]);
+        }
+        else{
+          closestRestRoomOptions.hide();
+          updateRequireFields(pages[currentPage], false);
+        }
+        console.log(closestRestRoomOptions);
+    });
+
+    $('input[name="houseType"]').click(function(){
+      var price = $(this).data('price');
+      $('#pricePerSqm').val(price);
+      console.log(price);
+      calculateQuotation();
+
+      updateSummary();
+    });
+
+    $('input[name="unitType"]').change(function(){
+      var type = $(this).data('type');
+      $(".commercialForm").empty();
+      if(type == "commercial")
+      {
+        $('.residentialRow').hide();
+        $('.commercialRow').show();
+        let commecialTemplate = `
+        <div class="row page" style="display: none;">
+          <div class="col-md-4 col-12 offset-md-4 bg-primary-subtle rounded p-3">
+              <h3>Electrical(Appliances for Commercial/Industrial use)</h3>
+              
+              <div class="mb-3 form-floating">
+                  <input class="form-control rangeHeater hasCommercialAppliance" type="number" id="rangeHeater" min="0" step="1" data-fee="3" data-min="0">
+                  <label class="form-label" for="rangeHeater">No. Range/Heater(Up to 1KW)</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control excessKW hasCommercialAppliance" type="number" id="excessKW" min="0" step="1" data-fee="1.5" data-min="0">
+                  <label class="form-label" for="excessKW">Excess of 1KW</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control freezer hasCommercialAppliance" type="number" id="freezer" min="0" step="1" data-fee="5" data-min="0">
+                  <label class="form-label" for="freezer">No. Freezer</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control washingMachine hasCommercialAppliance" type="number" id="washingMachine" min="0" step="1" data-fee="5" data-min="0">
+                  <label class="form-label" for="washingMachine">No. Washing Machine/Dryer</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control hairDryer hasCommercialAppliance" type="number" id="hairDryer" min="0" step="1" data-fee="5" data-min="0">
+                  <label class="form-label" for="hairDryer">No. Hair Curling/Hair Dryer</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control electricFan hasCommercialAppliance" type="number" id="electricFan" min="0" step="1" data-fee="3" data-min="0">
+                  <label class="form-label" for="electricFan">No. Fixed type Electric Fan</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control typewriter hasCommercialAppliance" type="number" id="typewriter" min="0" step="1" data-fee="3" data-min="0">
+                  <label class="form-label" for="typewriter">No. Typewriter/Cash Register/Adding Machine</label>
+              </div>
+
+
+              <button type="button" class="btn btn-secondary float-start back-button">Back</button>
+              <button type="button" class="btn btn-primary float-end next-button">Next</button>
+          </div>
+        </div>
+        
+        <div class="row page" style="display: none;">
+          <div class="col-md-4 col-12 offset-md-4 bg-primary-subtle rounded p-3">
+              <h3>Electrical(Appliances Equipment or Apparatus for Commercial/Industrial use)</h3>
+              
+              <div class="mb-3 form-floating">
+                  <input class="form-control electricBell hasCommercialEquipment" type="number" id="electricBell" min="0" step="1" data-fee="5" data-min="0">
+                  <label class="form-label" for="electricBell">No. Electric Bell/Announciator System</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control arcLight hasCommercialEquipment" type="number" id="arcLight" min="0" step="1" data-fee="5" data-min="0">
+                  <label class="form-label" for="arcLight">No. Arc Light/Lamp</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control flasher hasCommercialEquipment" type="number" id="flasher" min="0" step="1" data-fee="5" data-min="0">
+                  <label class="form-label" for="flasher">No. Flasher/Beacon Light</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control xray hasCommercialEquipment" type="number" id="xray" min="0" step="1" data-fee="30" data-min="0">
+                  <label class="form-label" for="xray">No. X-Ray Equipment</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control fireAlarm hasCommercialEquipment" type="number" id="fireAlarm" min="0" step="1" data-fee="3" data-min="0">
+                  <label class="form-label" for="fireAlarm">No. Fire Alarm Unit</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control batterCharging hasCommercialEquipment" type="number" id="batterCharging" min="0" step="1" data-fee="15" data-min="0">
+                  <label class="form-label" for="batterCharging">No. Battery Charging Rectifier</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control welder hasCommercialEquipment" type="number" id="welder" min="0" step="1" data-fee="5" data-min="0">
+                  <label class="form-label" for="welder">No. Electric Welder(Up to 1 KVA/KW)</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control neonSign hasCommercialEquipment" type="number" id="neonSign" min="0" step="1" data-fee="3" data-min="0">
+                  <label class="form-label" for="neonSign">No. Neon Sign</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control neonSignTransformer hasCommercialEquipment" type="number" id="neonSignTransformer" min="0" step="1" data-fee="3" data-min="0">
+                  <label class="form-label" for="neonSignTransformer">No. Neon Sign Transformer</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                  <input class="form-control neonSign" type="number" id="neonSign" min="0" step="1" data-fee="3" data-min="0">
+                  <label class="form-label" for="neonSign">No. Neon Sign<label>
+              </div>
+
+              <button type="button" class="btn btn-secondary float-start back-button">Back</button>
+              <button type="button" class="btn btn-primary float-end next-button">Next</button>
+          </div>
+        </div>
+
+
+        <div class="row page" style="display: none;">
+          <div
+            class="col-md-4 col-12 offset-md-4 bg-primary-subtle rounded p-3">
+            <h3>Electrical(Motion Picture Projector for commercial use)</h3>
+            <div class="mb-3 form-floating">
+              <input class="form-control motion16 hasMotion" type="number" id="motion16" min="1" step="1" data-fee="80" data-min="0">
+              <label class="form-label" for="motion16">No. 16mm</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control motion35 hasMotion" type="number" id="motion35" min="1" step="1" data-fee="100" data-min="0">
+              <label class="form-label" for="motion35">No. 35mm</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input class="form-control motion70 hasMotion" type="number" id="motion70" min="1" step="1" data-fee="180" data-min="0">
+              <label class="form-label" for="motion70">No. 70mm and above</label>
+            </div>
+
+            <button type="button"
+              class="btn btn-secondary float-start back-button">Back</button>
+            <button type="button" class="btn btn-primary float-end next-button">Next</button>
+          </div>
+        </div>
+
+        <div class="row page" style="display: none;">
+          <div
+            class="col-md-4 col-12 offset-md-4 bg-primary-subtle rounded p-3">
+            <h3>Electrical(TV Cameras for commercial/industrial use)</h3>
+            <div class="mb-3 form-floating">
+              <input class="form-control tvCamera hasTV" type="number" id="tvCamera" min="1" step="1" data-fee="50" data-min="0">
+              <label class="form-label" for="tvCamera">No. TV/Cameras</label>
+            </div>
+
+            <button type="button"
+              class="btn btn-secondary float-start back-button">Back</button>
+            <button type="button" class="btn btn-primary float-end next-button">Next</button>
+          </div>
+        </div>
+        `;
+
+        $('.commercialForm').append(commecialTemplate);
+        pages = $('.page');
+        maxPage = pages.length;
+        updateRequireFields(pages[currentPage + 1], false);
+      }
+      else{
+        $('.commercialRow').hide();
+        $('.residentialRow').show();        
+      }
+
+      pages = $('.page');
+      maxPage = pages.length;
+    });
+
+    function floorCountUpdated(){
+      // Your function or action when the input value changes
+      var floorCount = $(this).val();
+
+      if(floorCount <= 0){
+        return;
+      }
+      
+      console.log(floorCount);
+      $(".floors").empty();
+
+      for(var i = 0; i < floorCount; i++){
+
+        let floorTemplate = `
+            <div class="row page floor-config" style="display: none;">
+                <div class="col-md-4 col-12 offset-md-4  bg-primary-subtle rounded p-3">
+                    <h3>${getOrdinal(i + 1)} Floor</h3>
+                    <div class="mb-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input restRoomToogle" type="checkbox" role="switch" id="floorRestroom${i}">
+                            <label class="form-check-label" for="floorRestroom${i}">Does it have a restroom?</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 restRoomOptions bg-info p-3" style="display: none;">
+                        <div class="mb-3 form-floating">
+                            <input class="form-control restRoomLength" type="number" id="floorRestroomLength${i}" min="1" step="0.1" data-required>
+                            <label class="form-label" for="floorRestroomLength${i}">Restroom Length</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control restRoomWidth" type="number" id="floorRestroomWidth${i}" min="1" step="0.1" data-required>
+                            <label class="form-label" for="floorRestroomWidth${i}">Restroom Width</label>
+                        </div>                        
+                        <div class="mb-3 form-floating">
+                            <input class="form-control restRoomWaterCloset hasPlumbingExcess" type="number" id="restRoomWaterCloset${i}" min="1" step="1" data-required data-description="Number of water closets" data-fee="7" data-min="1">
+                            <label class="form-label" for="restRoomWaterCloset${i}">Water Closet</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control restRoomFloorDrain hasPlumbingExcess" type="number" id="restRoomFloorDrain${i}" min="1" step="1" data-required data-description="Number of floor drains" data-fee="3" data-min="2">
+                            <label class="form-label" for="restRoomFloorDrain${i}">Floor Drain</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control restRoomSink hasPlumbingExcess" type="number" id="restRoomSink${i}" min="0" step="1" value="0" data-description="Number of restroom sink" data-fee="3" data-min="1">
+                            <label class="form-label" for="restRoomSink${i}">Restroom Sink</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control restRoomLavatory hasPlumbingExcess" type="number" id="restRoomLavatory${i}" min="0" value="0" step="1" data-description="Number of Lavatory" data-fee="7" data-min="1">
+                            <label class="form-label" for="restRoomLavatory${i}">Lavatory</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control restRoomFaucet hasPlumbingExcess" type="number" id="restRoomFaucet${i}" min="0" value="0" step="1" data-description="Number of Faucets" data-fee="2" data-min="3">
+                            <label class="form-label" for="restRoomFaucet${i}">Faucet</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control restRoomShower hasPlumbingExcess" type="number" id="restRoomShower${i}" min="0" value="0" step="1" data-description="Number of Shower head" data-fee="2" data-min="1">
+                            <label class="form-label" for="restRoomShower${i}">Urinal</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control restRoomUrinal hasPlumbingExcess" type="number" id="restRoomUrinal${i}" min="0" value="0" step="1" data-description="Number of Urinal" data-fee="4" data-min="0">
+                            <label class="form-label" for="restRoomUrinal${i}">Urinal</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control restRoomBathTub hasPlumbingExcess" type="number" id="restRoomBathTub${i}" min="0" value="0" step="1" data-description="Number of Bath Tub" data-fee="7" data-min="0">
+                            <label class="form-label" for="restRoomBathTub${i}">Bath tub</label>
+                        </div>
+                      </div>
+                      
+                        <div class="mb-3 form-floating">
+                            <input class="form-control waterMeter " type="number" id="waterMeter${i}" placeholder="12mm - 25mm and above" min="12" value="12" step="0.1" data-required>
+                            <label class="form-label" for="waterMeter${i}">Water Meter size(mm)</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control restRoomSink hasPlumbingSpecial" type="number" id="sink${i}" min="0" step="1" value="0" data-description="Number of sink" data-fee="7" data-min="0">
+                            <label class="form-label" for="sink${i}">Sink</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control greaseTrap hasPlumbingSpecial" type="number" id="greaseTrap${i}" min="0" value="0" step="1" data-description="Number of Grease Trap" data-fee="7" data-min="0">
+                            <label class="form-label" for="greaseTrap${i}">Grease Trap</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control garageTrap hasPlumbingSpecial" type="number" id="garageTrap${i}" min="0" value="0" step="1" data-fee="7" data-min="0">
+                            <label class="form-label" for="garageTrap${i}">Garage Trap</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control bidet hasPlumbingSpecial" type="number" id="bidet${i}" min="0" value="0" step="1" data-fee="4" data-min="0">
+                            <label class="form-label" for="bidet${i}">Bidet</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control dentalCuspidor hasPlumbingSpecial" type="number" id="dentalCuspidor${i}" min="0" value="0" step="1" data-fee="4" data-min="0">
+                            <label class="form-label" for="dentalCuspidor${i}">Dental Cupsidor</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control gasFiredWaterHeater hasPlumbingSpecial" type="number" id="gasFiredWaterHeater${i}" min="0" value="0" step="1" data-fee="4" data-min="0">
+                            <label class="form-label" for="gasFiredWaterHeater${i}">Gas-Fired water heater</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control drinkingFountain hasPlumbingSpecial" type="number" id="drinkingFountain${i}" min="0" value="0" step="1" data-fee="2" data-min="0">
+                            <label class="form-label" for="drinkingFountain${i}">Drinking Fountain</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control barSodaFountainSink hasPlumbingSpecial" type="number" id="barSodaFountainSink${i}" min="0" value="0" step="1" data-fee="4" data-min="0">
+                            <label class="form-label" for="barSodaFountainSink${i}">Bar/Soda Fountain Sink</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control laundrySink hasPlumbingSpecial" type="number" id="laundrySink${i}" min="0" value="0" step="1" data-fee="4" data-min="0">
+                            <label class="form-label" for="laundrySink${i}">Laundry Sink</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control laboratorySink hasPlumbingSpecial" type="number" id="laboratorySink${i}" min="0" value="0" step="1" data-fee="4" data-min="0">
+                            <label class="form-label" for="laboratorySink${i}">Laboratory Sink</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input class="form-control fixedTyeSterilizer hasPlumbingSpecial" type="number" id="fixedTyeSterilizer${i}" min="0" value="0" step="1" data-fee="2" data-min="0">
+                            <label class="form-label" for="fixedTyeSterilizer${i}">Fixed-Tye Sterilizer</label>
+                        </div>
+                    
+
+                    <button type="button" class="btn btn-secondary float-start back-button">Back</button>
+                    
+                    <button type="button" class="btn btn-primary float-end next-button">Next</button>
+                </div>
+                <h3 class="text-center">${getOrdinal(i + 1)} Floor</h3>
+            </div>`;
+
+          $(".floors").append(floorTemplate);
+      }
+
+      currentPage = 1;
+      pages = $('.page');
+      maxPage = pages.length;
+      updateRequireFields(pages[currentPage + 1], false);
+      console.log(maxPage);
+    }
+  });
+
+  const lengthInput = document.getElementById("length");
+  const widthInput = document.getElementById("width");
+  const pricePerSqmInput = document.getElementById("pricePerSqm");
+  const totalSqmSpan = document.getElementById("totalSqm");
+  const quotationSpan = document.getElementById("quotation");
   
+  // Function to calculate the total sqm and quotation in real-time
+  function calculateQuotation() {
+      const length = parseFloat(lengthInput.value);
+      const width = parseFloat(widthInput.value);
+      const pricePerSqm = parseFloat(pricePerSqmInput.value);
 
+      if (!isNaN(length) && !isNaN(width) && !isNaN(pricePerSqm)) {
+          const sqm = length * width;
+          const quotation = sqm * pricePerSqm;
 
-  	var XadimensionID = idx;
-	var YadimensionID = idy;
-	var ZadimensionID = idz;
-
-	var cubicmeter =  XadimensionID * YadimensionID * ZadimensionID;
-
-	var costrow1 = cubicmeter * 22000;
-
-	var resultrow1 = costrow1
-
-	document.getElementById("CostRow1").innerHTML = resultrow1;
-	document.getElementById("X-Dimension").innerHTML = XadimensionID;
-	document.getElementById("Y-Dimension").innerHTML = YadimensionID;
-	document.getElementById("Z-Dimension").innerHTML = ZadimensionID;
-	document.getElementById("Cubic-Meter").innerHTML = cubicmeter;
-
-
-	sessionStorage.setItem("XadimensionsIS",XadimensionID);
-	sessionStorage.setItem("YadimensionsIS",YadimensionID);
-	console.log(XadimensionID);
-	console.log(YadimensionID);
-	sessionStorage.clear();
-	HideBeforeSee();
+          totalSqmSpan.textContent = sqm.toFixed(2);
+          totalSqm = sqm;
+          quotationSpan.textContent = formatCurrency(quotation);	
+          basePrice = quotation;
 }
-
-function HideBeforeSee(){
-	var x = document.getElementById("Reciept");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-
-
-  var x = document.getElementById("breakdowning");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-
-}
-
-</script>
-
-		<script>
-	const lengthInput = document.getElementById("length");
-	const widthInput = document.getElementById("width");
-	const pricePerSqmInput = document.getElementById("pricePerSqm");
-	const totalSqmSpan = document.getElementById("totalSqm");
-	const quotationSpan = document.getElementById("quotation");
-
-	// Function to calculate the total sqm and quotation in real-time
-	function calculateQuotation() {
-		const length = parseFloat(lengthInput.value);
-		const width = parseFloat(widthInput.value);
-		const pricePerSqm = parseFloat(pricePerSqmInput.value);
-
-		if (!isNaN(length) && !isNaN(width) && !isNaN(pricePerSqm)) {
-			const sqm = length * width;
-			const quotation = sqm * pricePerSqm;
-
-			totalSqmSpan.textContent = sqm.toFixed(2);
-			quotationSpan.textContent = quotation.toFixed(2);
-		}
 	}
 
 	// Add event listeners to the input fields for real-time calculation
@@ -215,6 +1224,20 @@ function HideBeforeSee(){
 
 	// Initial calculation
 	calculateQuotation();
+
+  function formatCurrency(number, currencyCode = 'PHP') {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: currencyCode
+    }).format(number);
+  }
+
+  function getOrdinal(n) {
+  const suffixes = ["st", "nd", "rd"];
+  const suffix = n % 10 < 4 && Math.floor(n / 10) !== 1 ? suffixes[n % 10 - 1] : "th";
+  return n + suffix;
+}
 </script>
-	</body>
+
+  </body>
 </html>

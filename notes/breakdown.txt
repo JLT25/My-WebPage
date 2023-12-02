@@ -1,0 +1,14 @@
+Process po ay 
+
+Pick client ng type ng finish then yung 
+
+Computation po sa x,y and z dimensions mag babago dependi sa piniling type ng finish po 
+
+
+Afterwards input po ng ilang restroom
+
+Ilang floors ganun po 
+
+Afterwards dependi po sa xyz dimension mag babago po yung computation po sa floor at restroom equipment na kailangan po 
+
+Then sa huli po naka latag po yung computation kung gaano kalaki po pipes ng restroom dependi sa room size at restrooms na ilalagay po sa room po parang ganun po sa lahat sir

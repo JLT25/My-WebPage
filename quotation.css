@@ -1,0 +1,68 @@
+
+
+/* Real-Time Quotation Form */
+#quotationForm {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #3c4042;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    font-family: 'Arial', sans-serif;
+}
+
+#quotationForm .form-step {
+    display: none;
+}
+
+#quotationForm .form-step.active {
+    display: block;
+}
+
+#quotationForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#quotationForm input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+#quotationForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #006bb3;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#quotationForm button:hover {
+    background-color: #00528d;
+}
+
+/* Quotation Results */
+#quotationResults {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e6f7ff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    font-family: 'Arial', sans-serif;
+}
+
+#quotationResults p {
+    margin-bottom: 10px;
+}
+
+
+#quotationResults span {
+    font-weight: bold;
+}
